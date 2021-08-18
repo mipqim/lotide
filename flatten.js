@@ -23,30 +23,23 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-const without = function(srcArry, rmArry) {
+const flatten = function(array, result) {
+  let resultArray = [];
 
-  let rsltArry = [];
+  if (result) {
+    resultArray = result;
+  }
 
-  for (let srcVal of srcArry) {
-    
-    let isFnd = false;
-    
-    for (let rmVal of rmArry) {
-      if (srcVal === rmVal) {
-        isFnd = true;
-        break;
-      }
-    }
-
-    if (!isFnd) {
-      rsltArry.push(srcVal);
+  for (let obj of array) {
+    if (Array.isArray(obj)) {
+      let sendingArr = resultArray;
+      resultArray = flatten(obj, sendingArr);
+    } else {
+      resultArray.push(obj);
     }
   }
 
-  return rsltArry;
-}
+  return resultArray;
+};
 
-assertArraysEqual(without([1, 2, 3], [1, 2, 3]), []);
-assertArraysEqual(without([1, 2, 3], [1]), [2,3]);
-assertArraysEqual(without(['1', 2, 3], [2, 3, 8, 'rm']), ['1']);
-assertArraysEqual(without(['betty', 'beacon', 3], [3, 'rm', 'beacon']), ['betty']);
+assertArraysEqual(flatten([1, 2, [3, [4, 7]], 5,[6], [7,8,9,10,[11,12,13,14]]]), [1, 2, 3, 4, 7, 5,6,7,8,9,10,11,12,13,14]);
