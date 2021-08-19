@@ -17,8 +17,6 @@ const findKeyByValue = function(items, val) {
   }
 */
   let itemKeyArray = Object.keys(items);
-  console.log(itemKeyArray);
-
   for (let itemKey of itemKeyArray) {
     if (items[itemKey] === val) {
       resultKey = itemKey;
