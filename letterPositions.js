@@ -9,7 +9,7 @@ const assertArraysEqual = function(actualArr, expectedArr) {
 const eqArrays = function(arr1, arr2) {
 // need to check both var are array
   if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
+  for (let i = 0; i < arr1.length; i++) {
       if (arr1[i] !== arr2[i]) {
 
         return false;
