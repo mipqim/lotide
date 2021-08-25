@@ -23,3 +23,5 @@ const tstCase1 = findKey({
 }, x => x.stars === 2) // => "noma"
 
 assertEqual(tstCase1, 'noma');
+
+module.exports = findKey;

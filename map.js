@@ -47,3 +47,5 @@ assertArraysEqual(results3, ["ground_6", "control_7", "to_2", "major_5", "tom_3"
 
 const results4 = map(words, word => word.toUpperCase());
 assertArraysEqual(results4, ["GROUND", "CONTROL", "TO", "MAJOR", "TOM"]);
+
+module.exports = map;

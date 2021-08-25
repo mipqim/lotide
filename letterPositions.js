@@ -41,3 +41,5 @@ const testCase = letterPositions('lighthouse in the house');
 assertArraysEqual(testCase.l, [0]);
 assertArraysEqual(testCase.i, [1, 11]);
 assertArraysEqual(testCase.e, [9, 16, 22]);
+
+module.exports = letterPositions;
